@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0d1a2d"/>
+      <stop offset="100%" stop-color="#060a12"/>
+    </radialGradient>
+
+    <!-- Cyan glow gradient -->
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#00e5ff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ring gradient -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="50%" stop-color="#0092cc"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+
+    <!-- Inner ring shimmer -->
+    <linearGradient id="innerRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#00c8ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- Text gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#e0f7ff"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+
+    <!-- Star sparkle filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Outer glow filter -->
+    <filter id="outerGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+    </filter>
+
+    <!-- Subtle shadow -->
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Circular background -->
+  <circle cx="256" cy="256" r="250" fill="url(#bgGrad)" stroke="#0a1525" stroke-width="2"/>
+
+  <!-- Ambient glow -->
+  <circle cx="256" cy="256" r="200" fill="url(#glowGrad)"/>
+
+  <!-- Outer orbital ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#ringGrad)" stroke-width="2.5" opacity="0.7"/>
+
+  <!-- Secondary orbital ring (tilted feel via ellipse) -->
+  <ellipse cx="256" cy="256" rx="190" ry="210" fill="none" stroke="url(#innerRing)" stroke-width="1.5" transform="rotate(-15 256 256)"/>
+
+  <!-- Orbital dots (stars/nodes on the ring) -->
+  <circle cx="256" cy="36" r="5" fill="#00e5ff" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="476" cy="256" r="4" fill="#00e5ff" filter="url(#glow)" opacity="0.7"/>
+  <circle cx="256" cy="476" r="4" fill="#00e5ff" filter="url(#glow)" opacity="0.6"/>
+  <circle cx="36" cy="256" r="3" fill="#00e5ff" filter="url(#glow)" opacity="0.5"/>
+
+  <!-- Small orbital dots -->
+  <circle cx="420" cy="100" r="2.5" fill="#00c8ff" opacity="0.6"/>
+  <circle cx="92" cy="420" r="2.5" fill="#00c8ff" opacity="0.5"/>
+  <circle cx="400" cy="430" r="2" fill="#0092cc" opacity="0.4"/>
+  <circle cx="110" cy="90" r="2" fill="#0092cc" opacity="0.4"/>
+
+  <!-- Central hexagonal frame (crypto feel) -->
+  <polygon points="256,100 388,176 388,336 256,412 124,336 124,176"
+           fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- Inner hexagonal accent -->
+  <polygon points="256,130 370,195 370,317 256,382 142,317 142,195"
+           fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.1"/>
+
+  <!-- NAU text - main logo mark -->
+  <text x="256" y="278" text-anchor="middle" font-family="'Helvetica Neue', 'Arial', sans-serif"
+        font-weight="700" font-size="120" letter-spacing="12" fill="url(#textGrad)" filter="url(#shadow)">
+    NAU
+  </text>
+
+  <!-- Glow behind text -->
+  <text x="256" y="278" text-anchor="middle" font-family="'Helvetica Neue', 'Arial', sans-serif"
+        font-weight="700" font-size="120" letter-spacing="12" fill="#00e5ff" opacity="0.15" filter="url(#outerGlow)">
+    NAU
+  </text>
+
+  <!-- Subtitle line -->
+  <text x="256" y="330" text-anchor="middle" font-family="'Helvetica Neue', 'Arial', sans-serif"
+        font-weight="300" font-size="22" letter-spacing="8" fill="#00e5ff" opacity="0.6">
+    COSMONAUT
+  </text>
+
+  <!-- Top accent line -->
+  <line x1="180" y1="155" x2="332" y2="155" stroke="#00e5ff" stroke-width="1" opacity="0.3"/>
+
+  <!-- Bottom accent line -->
+  <line x1="180" y1="355" x2="332" y2="355" stroke="#00e5ff" stroke-width="1" opacity="0.3"/>
+
+  <!-- Corner accent marks (tech/HUD feel) -->
+  <!-- Top-left -->
+  <path d="M90,90 L90,110 M90,90 L110,90" stroke="#00e5ff" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <!-- Top-right -->
+  <path d="M422,90 L422,110 M422,90 L402,90" stroke="#00e5ff" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <!-- Bottom-left -->
+  <path d="M90,422 L90,402 M90,422 L110,422" stroke="#00e5ff" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <!-- Bottom-right -->
+  <path d="M422,422 L422,402 M422,422 L402,422" stroke="#00e5ff" stroke-width="1.5" fill="none" opacity="0.3"/>
+
+  <!-- Outer ring edge highlight -->
+  <circle cx="256" cy="256" r="248" fill="none" stroke="#00e5ff" stroke-width="0.5" opacity="0.2"/>
+</svg>
