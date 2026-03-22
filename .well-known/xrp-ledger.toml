@@ -1,0 +1,27 @@
+# XRP Ledger TOML file for NAU Token
+# Hosted at: https://waywow222.github.io/.well-known/xrp-ledger.toml
+
+[[CURRENCIES]]
+code = "NAU"
+issuer = "rBoi8LPNKP3iXKzhVyCi9wwYsjaNRMnZUE"
+display_name = "NAU"
+symbol = "NAU"
+decimals = 6
+icon = "https://waywow222.github.io/assets/nau-token-icon.png"
+description = "NAU is the native utility token of the MultiNaut autonomous AI agent platform, built by Twenty Two Eleven Holdings."
+website = "https://waywow222.github.io"
+
+[[ACCOUNTS]]
+address = "rBoi8LPNKP3iXKzhVyCi9wwYsjaNRMnZUE"
+name = "NAU Issuer"
+desc = "Official NAU token issuer — Twenty Two Eleven Holdings"
+
+[[ACCOUNTS]]
+address = "rN5vFMQ3rCEHj9Mq3jtkJweJv3tBdDy6TX"
+name = "NAU Treasury"
+desc = "Operational treasury for NAU distribution"
+
+[[ACCOUNTS]]
+address = "rEESvFfedfX4nrkDivRbERz4U67ERbevu8"
+name = "2211 Holdings Vault"
+desc = "Cold savings reserve — Twenty Two Eleven Holdings"
